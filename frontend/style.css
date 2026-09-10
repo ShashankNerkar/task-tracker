@@ -7,7 +7,7 @@
 body {
     font-family: Arial, sans-serif;
     background: #f4f4f4;
-    padding: 40px;
+    padding: 40px 20px;
 }
 
 .container {
@@ -16,6 +16,7 @@ body {
     background: white;
     padding: 30px;
     border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
 }
 
 h1 {
@@ -31,9 +32,11 @@ form {
 
 input {
     flex: 1;
+    min-width: 0;
     padding: 12px;
     border: 1px solid #ccc;
     border-radius: 5px;
+    font-size: 15px;
 }
 
 button {
@@ -44,6 +47,7 @@ button {
     cursor: pointer;
     background: #222;
     color: white;
+    font-size: 14px;
 }
 
 button:hover {
@@ -54,18 +58,83 @@ button:hover {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px;
+    gap: 15px;
+    padding: 15px 0;
     border-bottom: 1px solid #ddd;
+}
+
+.task-info {
+    flex: 1;
+    min-width: 0;
 }
 
 .task-info h3 {
     margin-bottom: 5px;
+    word-break: break-word;
 }
 
 .task-info p {
     color: #666;
+    word-break: break-word;
 }
 
 .delete-btn {
     background: #d9534f;
+}
+
+/* Mobile Responsive */
+@media (max-width: 600px) {
+
+    body {
+        padding: 15px;
+    }
+
+    .container {
+        width: 100%;
+        padding: 20px 15px;
+        border-radius: 8px;
+    }
+
+    h1 {
+        font-size: 25px;
+        margin-bottom: 20px;
+    }
+
+    form {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    input {
+        width: 100%;
+    }
+
+    form button {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .task {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+        padding: 15px 0;
+    }
+
+    .task-info {
+        width: 100%;
+    }
+
+    .task > div:last-child {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    .task > div:last-child button {
+        margin-left: 0;
+        flex: 1;
+        min-width: 80px;
+    }
 }
