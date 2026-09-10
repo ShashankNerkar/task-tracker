@@ -1,4 +1,4 @@
-const API_URL = "http://localhost:5000/api/tasks";
+const API_URL = "https://task-tracker-ci58.onrender.com/api/tasks";
 
 const taskForm = document.getElementById("taskForm");
 const taskList = document.getElementById("taskList");
